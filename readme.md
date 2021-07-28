@@ -1,4 +1,4 @@
-# Javascript-Problems-Solving-Practice
+# Products App
 - This repo is for JavaScript Problem solving Practice activity.
 - This activity is based on making different live projects given by the instructor.
 - My task is to make a basic Product App.

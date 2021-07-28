@@ -1,34 +1,34 @@
 let products = [{
   productName: 'Nike Man\'s Flex',
-  image: `<img src="nike-shoes.jpg" alt="nike-shoes-red" width="173" height="120" class = "imageClass">`,
+  image: `<img src="images/nike-shoes.jpg" alt="nike-shoes-red" width="173" height="120" class = "imageClass">`,
   isLiked: false,
   tag: "footwear",
   price: "$100"
 },
 {
   productName: "Nike shoes black",
-  image:`<img src="nike-black-shoes.jpg" alt="nike-shoes-black" width="173" height="120" class = "imageClass">`,
+  image:`<img src="images/nike-black-shoes.jpg" alt="nike-shoes-black" width="173" height="120" class = "imageClass">`,
   isLiked: true,
   tag: "footwear",
   price: "$1100"
 },
 {
   productName: "Shirt",
-  image:`<img src="shirt-image.jpg" alt="shirt" width="173" height="120" class = "imageClass">`,
+  image:`<img src="images/shirt-image.jpg" alt="shirt" width="173" height="120" class = "imageClass">`,
   isLiked: true,
   tag: "clothes",
   price: "$1200"
 },
 {
   productName: "juicer-machine",
-  image:`<img src="juicer-machine.png" alt="juicer-machine" width="173" height="120" class = "imageClass">`,
+  image:`<img src="images/juicer-machine.png" alt="juicer-machine" width="173" height="120" class = "imageClass">`,
   isLiked: false,
   tag: "electronics",
   price: "$1500"
 },
 {
   productName:"Iron",
-  image:`<img src="iron.jpg" alt="iron" width="173" height="120" class = "imageClass">`,
+  image:`<img src="images/iron.jpg" alt="iron" width="173" height="120" class = "imageClass">`,
   isLiked: true,
   tag: "electronics",
   price: "$1700"
@@ -36,13 +36,14 @@ let products = [{
 ];
 
 filterSelection("all")
+
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("filterDiv");
   if (c == "all") c = "";
   for (i = 0; i < x.length; i++) {
     w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show"); //try with not != -1
   }
 }
 
@@ -88,16 +89,9 @@ for (let i=0; i<products.length; i++){
   }
 }
 
-
-
-
-
-
-
-
-
-
-
+function addItem(){
+ alert("Item added to Cart!");
+}
 
 // let products = [{
 //         productName: 'Nike Man\'s Flex',
