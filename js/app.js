@@ -28,7 +28,7 @@ let products = [{
 },
 {
   productName:"Iron",
-  image:`<img src="images/iron.jpg" alt="iron" width="173" height="120" class = "imageClass">`,
+  image:`<img src="images/iron1.jpg" alt="iron" width="173" height="120" class = "imageClass">`,
   isLiked: true,
   tag: "electronics",
   price: "$1700"
