@@ -143,6 +143,8 @@ header {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
+  align-content: center;
 }
 
 .btnLike{
@@ -198,13 +200,15 @@ header {
 
 #cart, a{
   font-family: 'Itim', cursive;
+  color: rgb(34, 12, 134);;
+
 }
 
 .page-footer {
   text-align: right;
   font-size: 1rem;
   font-family: 'Itim', cursive;
-  color: rgb(37, 5, 88);
+  color: black;
   margin-right: 18px;
   
 }
