@@ -38,29 +38,33 @@ let products = [{
 filterSelection("all")
 
 function filterSelection(c) {
-  var x, i;
-  x = document.getElementsByClassName("filterDiv");
+  let x = document.getElementsByClassName("product-card");
   if (c == "all") c = "";
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show"); //try with not != -1
+  for (let i = 0; i < x.length; i++) {
+    removeProduct(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) addProduct(x[i], "show"); //i will try with != -1
   }
 }
 
-function w3AddClass(element, name) {
-  var i, arr1, arr2;
+function addProduct(element, name) {
+  let arr1, arr2;
   arr1 = element.className.split(" ");
+  //console.log(arr1);
   arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  //console.log(arr2);
+  for (let i = 0; i < arr2.length; i++) {
+
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
   }
 }
 
-function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
+function removeProduct(element, name) {
+  let arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
+  for (let i = 0; i < arr2.length; i++) {
     while (arr1.indexOf(arr2[i]) > -1) {
       arr1.splice(arr1.indexOf(arr2[i]), 1);     
     }
@@ -69,11 +73,11 @@ function w3RemoveClass(element, name) {
 }
 
 // Add active class to the current button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
+let btnContainer = document.getElementById("filter-buttons");
+let btns = btnContainer.getElementsByClassName("btn");
+for (let i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
+    let current = document.getElementsByClassName("active");
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
   });
@@ -85,57 +89,33 @@ for (let i=0; i<products.length; i++){
       document.getElementsByClassName("productName")[j].innerHTML = products[i+j].productName;
       document.getElementsByClassName("price")[j].innerHTML = products[i+j].price;
       document.getElementsByClassName("imageDiv")[j].innerHTML = products[i+j].image;
-      //console.log("ElementsByClassName array's length: ", document.getElementsByClassName("productName").length);
   }
 }
 
 function addItem(){
  alert("Item added to Cart!");
+
+ let totalItems = document.getElementById("cart");
+ // Increase count of cart.
+ totalItems.textContent = + totalItems.textContent + 1;
 }
 
-// let products = [{
-//         productName: 'Nike Man\'s Flex',
-//         image: `<img src="nike-shoes.jpg" alt="nike-shoes" width="173" height="120" class = "imageClass">`,
-//         isLiked: false,
-//         tag: "footwear",
-//         price: "$100"
-//       },
-//       {
-//         productName: "Nike shoes black",
-//         image:`<img src="nike-black-shoes.jpg" alt="nike-shoes" width="173" height="120" class = "imageClass">`,
-//         isLiked: true,
-//         tag: "footwear",
-//         price: "$1100"
-//       },
-//       {
-//         productName: "Shirt",
-//         image:`<img src="shirt-image.jpg" alt="nike-shoes" width="173" height="120" class = "imageClass">`,
-//         isLiked: true,
-//         tag: "clothes",
-//         price: "$1200"
-//       },
-//       {
-//         productName: "juicer-machine",
-//         image:`<img src="nike-shoes.jpg" alt="nike-shoes" width="173" height="120" class = "imageClass">`,
-//         isLiked: false,
-//         tag: "electronics",
-//         price: "$1500"
-//       },
-//       {
-//         productName:"Iron",
-//         image:`<img src="nike-shoes.jpg" alt="nike-shoes" width="173" height="120" class = "imageClass">`,
-//         isLiked: true,
-//         tag: "footwear",
-//         price: "$1700"
-//       }
-// ];
 
-// for (let i=0; i<products.length; i++){
-//     for (let j=0; j<4; j++){
-//         document.getElementsByClassName("productName")[j].innerHTML = products[i+j].productName;
-//         document.getElementsByClassName("price")[j].innerHTML = products[i+j].price;
-//         document.getElementsByClassName("imageDiv")[j].innerHTML = products[i+j].image;
-//   }
+
+
+
+
+
+// function filterSelection() {
+//  let x;
+//       for (let a = 0; a < products.length; a++){
+//         if ( products[a].tag == "footwear"){
+//           x = document.getElementsByClassName(products[a].tag);
+//         }
+//       }
+//       for (let i = 0; i < x.length; i++) {
+//               addProduct(x[i], "show"); 
+//         }  
 // }
 
 // const result1 = products.filter(product => product.tag == "footwear");
@@ -145,11 +125,9 @@ function addItem(){
 
 // }
 
-// // const result2 = products.filter(product => product.tag == "clothes");
-// // console.log(result2);
+// let toSearch = 'footwear'; 
 
-// // const result3 = products.filter(product => product.tag == "electronics");
-// // console.log(result3);
+// let result = products.filter(product => product.tag === toSearch);
 
+// console.log(result);
 
-// div.style.display = "none";

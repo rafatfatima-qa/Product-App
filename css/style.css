@@ -21,8 +21,7 @@ header {
   background-image: linear-gradient(to bottom, rgb(150, 235, 235) rgb(208, 238, 243));
 }
 
-
-.filterDiv {
+.product-card {
   float: left;
   color: #070606;
   display: none;
@@ -55,7 +54,7 @@ header {
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 10px;
-  margin: 80px 0px 0px 10px; /*top right bottom left */
+  margin: 60px 0px 0px 10px; /*top right bottom left */
   padding-bottom: 10px;
   text-decoration:none;
   font-size: 15px;
@@ -90,18 +89,21 @@ header {
   margin-top: 20px;
   margin-left: 250px;
   margin-right: 250px;
+  margin-bottom: 20px;
   width: 53%;
   border: solid white;
   border-radius: 15px;  
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   border:rgb(208, 238, 243) solid 1.5px;
+  font-family: 'Itim', cursive; /* for cart page */
+  font-size: 30px; /* for cart page */
 }
 
 #productHeading{
   font-family: 'Itim', cursive;
   font-size: 30px;
   font-weight: bolder;
-  margin: 0px;
+  margin: 11px;
   padding: 0px; 
 }
 
@@ -137,13 +139,13 @@ header {
   border-radius: 15px;
    
 }
-#myBtnContainer{
+#filter-buttons{
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
 }
 
-#btnLike{
+.btnLike{
   float: right;
   background-color: rgb(62, 89, 211);
   border: none;
@@ -165,7 +167,7 @@ header {
   border-radius: 10px;
 }
 
-#btnAdd {
+.btnAdd {
   background-color: rgb(62, 89, 211);
   border:none;
   font-family: 'Itim', cursive;
@@ -183,7 +185,7 @@ header {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   background-image: linear-gradient(to bottom, #a4a4df 0%, rgb(62, 89, 211) 51%, rgb(62, 89, 211) 100%)
 }
-#btnAdd:hover {
+.btnAdd:hover {
   background-color: rgb(45, 30, 131); 
   color: white;
   cursor: pointer;
@@ -192,4 +194,24 @@ header {
 #link-class{
 
   float: right;
+}
+
+#cart, a{
+  font-family: 'Itim', cursive;
+}
+
+.page-footer {
+  text-align: right;
+  font-size: 1rem;
+  font-family: 'Itim', cursive;
+  color: rgb(37, 5, 88);
+  margin-right: 18px;
+  
+}
+
+.page-footer span {
+  color: rgb(173, 14, 14);
+}
+.page-footer a {
+  color: rgb(34, 12, 134);
 }
